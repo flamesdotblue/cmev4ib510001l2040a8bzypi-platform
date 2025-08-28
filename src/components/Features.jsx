@@ -43,8 +43,8 @@ export default function Features() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
-              className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-rose-50 ring-1 ring-inset ring-rose-200/70">
+              className="rounded-2xl border border-white/60 bg-white/60 p-6 ring-1 ring-slate-200/80 backdrop-blur-md shadow-[10px_10px_26px_rgba(0,0,0,0.06),_-10px_-10px_26px_rgba(255,255,255,0.95)] hover:shadow-[14px_14px_34px_rgba(0,0,0,0.08),_-14px_-14px_34px_rgba(255,255,255,1)] transition-shadow">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-rose-50 ring-1 ring-inset ring-rose-200/70 shadow-[inset_2px_2px_6px_rgba(255,255,255,0.8)]">
                 {f.icon}
               </div>
               <h3 className="mt-4 font-semibold text-slate-900">{f.title}</h3>

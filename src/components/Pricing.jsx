@@ -62,12 +62,14 @@ export default function Pricing() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.4, delay: i * 0.05 }}
               className={[
-                'relative rounded-2xl border p-6 shadow-sm bg-white',
-                tier.highlight ? 'border-rose-300 shadow-md ring-1 ring-rose-200' : 'border-slate-200',
+                'relative rounded-2xl border p-6 backdrop-blur-md',
+                tier.highlight
+                  ? 'border-white/60 bg-gradient-to-br from-white/70 via-white/60 to-rose-50/60 ring-1 ring-rose-200 shadow-[12px_12px_30px_rgba(0,0,0,0.06),_-12px_-12px_30px_rgba(255,255,255,0.98)]'
+                  : 'border-white/60 bg-white/60 ring-1 ring-slate-200/80 shadow-[10px_10px_26px_rgba(0,0,0,0.06),_-10px_-10px_26px_rgba(255,255,255,0.95)]',
               ].join(' ')}
             >
               {tier.highlight && (
-                <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-rose-600 px-2.5 py-1 text-xs font-medium text-white shadow">Most popular</span>
+                <span className="absolute -top-3 left-6 inline-flex items-center rounded-full bg-white/70 px-2.5 py-1 text-xs font-medium text-rose-700 ring-1 ring-rose-200 backdrop-blur-md shadow-[6px_6px_16px_rgba(0,0,0,0.06),_-6px_-6px_16px_rgba(255,255,255,0.95)]">Most popular</span>
               )}
               <h3 className="text-lg font-semibold text-slate-900">{tier.name}</h3>
               <p className="mt-1 text-sm text-slate-600">{tier.desc}</p>
@@ -82,8 +84,10 @@ export default function Pricing() {
               </ul>
               <div className="mt-6">
                 <a href="#" className={[
-                  'inline-flex w-full items-center justify-center rounded-md px-4 py-2 text-sm font-medium shadow-sm',
-                  tier.highlight ? 'bg-rose-600 text-white hover:bg-rose-500' : 'border border-slate-200 bg-white text-slate-900 hover:border-rose-200 hover:text-rose-600',
+                  'inline-flex w-full items-center justify-center rounded-2xl px-4 py-2 text-sm font-semibold transition-all backdrop-blur-md',
+                  tier.highlight
+                    ? 'border border-white/60 bg-gradient-to-br from-white/80 to-rose-50/70 text-rose-800 ring-1 ring-rose-300 shadow-[10px_10px_26px_rgba(0,0,0,0.06),_-10px_-10px_26px_rgba(255,255,255,0.95)] hover:shadow-[14px_14px_34px_rgba(0,0,0,0.08),_-14px_-14px_34px_rgba(255,255,255,1)] hover:from-white/90 hover:to-rose-100/70 active:shadow-[inset_8px_8px_18px_rgba(0,0,0,0.08),inset_-8px_-8px_18px_rgba(255,255,255,0.85)]'
+                    : 'border border-white/60 bg-white/60 text-slate-900 ring-1 ring-slate-200/80 shadow-[10px_10px_26px_rgba(0,0,0,0.06),_-10px_-10px_26px_rgba(255,255,255,0.95)] hover:shadow-[14px_14px_34px_rgba(0,0,0,0.08),_-14px_-14px_34px_rgba(255,255,255,1)] hover:text-rose-700 hover:ring-rose-200 active:shadow-[inset_8px_8px_18px_rgba(0,0,0,0.08),inset_-8px_-8px_18px_rgba(255,255,255,0.85)]',
                 ].join(' ')}>
                   {tier.cta}
                 </a>
